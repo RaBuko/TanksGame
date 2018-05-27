@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>MenuEventSheet</name>
+    <events>
+        <event-block sid="731802339889165">
+            <conditions>
+                <condition id="0" name="On clicked" sid="817534327733488" type="StartGameButton" />
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="557708654711858" type="System">
+                    <param id="0" name="Layout">Game</param>
+                </action>
+                <action id="-40" name="Set fullscreen scaling" sid="722144347905122" type="System">
+                    <param id="0" name="Fullscreen scaling">1</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

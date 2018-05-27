@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>Tanks</name>
+    <description></description>
+    <version>1.0.0.0</version>
+    <author>Rafal Bukowski</author>
+    <author-email></author-email>
+    <author-website>http://</author-website>
+    <app-id>com.mycompany.myapp</app-id>
+    <unique-id>3bfdfktztch0t</unique-id>
+    <saved-with-version>25703</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Button" version="1">Button</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+    </used-plugins>
+    <used-behaviors />
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>1400</width>
+        <height>900</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <first-layout>Menu</first-layout>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Downscaling">Medium quality</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Construct 2 splash</prop>
+        <prop name="Orientations">Any</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Preload sounds">Yes</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-type name="TitleText" sid="205554851946872">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="StartGameButton" sid="994398004930957">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="GreenTank" sid="987965318212373">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="speed" sid="501078489873911" type="number" />
+                <instance-variable name="lifes" sid="254668525565232" type="number" />
+                <instance-variable name="ammo" sid="753793398683984" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="826394032802261" speed="5">
+                    <frame duration="1" hotspotX="0.506667" hotspotY="0.5">
+                        <image-point name="TankFront" x="0.506667" y="1" />
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0.84" />
+                            <point x="0.613333" y="0.77" />
+                            <point x="0.58" y="1" />
+                            <point x="0.433333" y="1" />
+                            <point x="0.416667" y="0.78" />
+                            <point x="0" y="0.83" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="BlueTank" sid="285064519495530">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="speed" sid="521303464743996" type="number" />
+                <instance-variable name="lifes" sid="655677239033443" type="number" />
+                <instance-variable name="ammo" sid="344491135246462" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="504390391754184" speed="5">
+                    <frame duration="1" hotspotX="0.506667" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.0266667" y="0.02" />
+                            <point x="0.973333" y="0.02" />
+                            <point x="0.986667" y="0.835" />
+                            <point x="0.593333" y="0.79" />
+                            <point x="0.6" y="1" />
+                            <point x="0.426666" y="0.995" />
+                            <point x="0.413333" y="0.79" />
+                            <point x="0" y="0.8275" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Keyboard" sid="983110606179805">
+            <plugin id="Keyboard" />
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder>
+        <layout>Menu.xml</layout>
+        <layout>Game.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>MenuEventSheet.xml</event-sheet>
+        <event-sheet>GameEventSheet.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Keyboard" uid="4" />
+    </global-instances>
+    <sounds-folder />
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>
