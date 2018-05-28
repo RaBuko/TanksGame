@@ -10,10 +10,11 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout active="1" order="0">Menu</layout>
+        <layout order="0">Menu</layout>
         <layout order="3">Game</layout>
         <event-sheet order="1">MenuEventSheet</event-sheet>
-        <event-sheet order="2">GameEventSheet</event-sheet>
+        <event-sheet active="1" order="2">GameEventSheet</event-sheet>
+        <event-sheet order="4">ControlsSheet</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -24,13 +25,20 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     <families-expanded root="1" />
     <folders-expanded>
         <folder expanded="1" path="object-folder/" />
+        <folder expanded="0" path="object-folder/Menu/" />
+        <folder expanded="0" path="object-folder/GameObjects/" />
+        <folder expanded="1" path="object-folder/GameAdditionals/" />
         <folder expanded="1" path="layout-folder/" />
         <folder expanded="1" path="event-folder/" />
         <folder expanded="1" path="file-folder/" />
         <folder expanded="1" path="sound-folder/" />
         <folder expanded="1" path="music-folder/" />
         <folder expanded="0" path="file-folder/Icons/" />
-        <folder expanded="1" path="animation-folder/GreenTank/" />
+        <folder expanded="1" path="animation-folder/BlueBullet/" />
         <folder expanded="1" path="animation-folder/BlueTank/" />
+        <folder expanded="1" path="animation-folder/GreenTank/" />
+        <folder expanded="1" path="animation-folder/GreenBullet/" />
+        <folder expanded="1" path="animation-folder/Wall/" />
+        <folder expanded="1" path="animation-folder/Boom/" />
     </folders-expanded>
 </c2uistate>

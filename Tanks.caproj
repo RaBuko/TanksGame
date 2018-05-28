@@ -8,14 +8,21 @@
     <author-website>http://</author-website>
     <app-id>com.mycompany.myapp</app-id>
     <unique-id>3bfdfktztch0t</unique-id>
-    <saved-with-version>25703</saved-with-version>
+    <saved-with-version>25900</saved-with-version>
     <used-plugins>
         <plugin author="Scirra" id="Button" version="1">Button</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
     </used-plugins>
-    <used-behaviors />
+    <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
+        <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+    </used-behaviors>
     <used-effects />
     <configurations>
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
@@ -44,61 +51,195 @@
         <prop name="Use high-DPI display">Yes</prop>
     </configuration-settings>
     <object-folder>
-        <object-type name="TitleText" sid="205554851946872">
-            <plugin id="Text" />
-        </object-type>
-        <object-type name="StartGameButton" sid="994398004930957">
-            <plugin id="Button" />
-        </object-type>
-        <object-type name="GreenTank" sid="987965318212373">
-            <plugin id="Sprite" />
-            <instance-variables>
-                <instance-variable name="speed" sid="501078489873911" type="number" />
-                <instance-variable name="lifes" sid="254668525565232" type="number" />
-                <instance-variable name="ammo" sid="753793398683984" type="number" />
-            </instance-variables>
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="826394032802261" speed="5">
-                    <frame duration="1" hotspotX="0.506667" hotspotY="0.5">
-                        <image-point name="TankFront" x="0.506667" y="1" />
-                        <collision-poly>
-                            <point x="0" y="0" />
-                            <point x="1" y="0" />
-                            <point x="1" y="0.84" />
-                            <point x="0.613333" y="0.77" />
-                            <point x="0.58" y="1" />
-                            <point x="0.433333" y="1" />
-                            <point x="0.416667" y="0.78" />
-                            <point x="0" y="0.83" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="BlueTank" sid="285064519495530">
-            <plugin id="Sprite" />
-            <instance-variables>
-                <instance-variable name="speed" sid="521303464743996" type="number" />
-                <instance-variable name="lifes" sid="655677239033443" type="number" />
-                <instance-variable name="ammo" sid="344491135246462" type="number" />
-            </instance-variables>
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="504390391754184" speed="5">
-                    <frame duration="1" hotspotX="0.506667" hotspotY="0.5">
-                        <collision-poly>
-                            <point x="0.0266667" y="0.02" />
-                            <point x="0.973333" y="0.02" />
-                            <point x="0.986667" y="0.835" />
-                            <point x="0.593333" y="0.79" />
-                            <point x="0.6" y="1" />
-                            <point x="0.426666" y="0.995" />
-                            <point x="0.413333" y="0.79" />
-                            <point x="0" y="0.8275" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
+        <object-folder name="Menu">
+            <object-type name="Controls" sid="864076914448631">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="ControlsBegin" sid="819477671393866">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="Instructions" sid="317675453871363">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="InstructionsBegin" sid="696297131864701">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="TitleText" sid="205554851946872">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="StartGameButton" sid="994398004930957">
+                <plugin id="Button" />
+            </object-type>
+            <object-type name="MenuBackground" sid="280622230156986">
+                <plugin id="TiledBg" />
+                <texture />
+            </object-type>
+        </object-folder>
+        <object-folder name="GameObjects">
+            <object-type name="BlueBullet" sid="542577100379097">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Bullet" sid="642378676011144">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                    <behavior-type name="DestroyOutsideLayout" sid="153386515323661">
+                        <behavior id="destroy" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="868667448256283" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.1" y="0.1" />
+                                <point x="0.5" y="0" />
+                                <point x="0.9" y="0.1" />
+                                <point x="1" y="0.5" />
+                                <point x="0.9" y="0.9" />
+                                <point x="0.5" y="1" />
+                                <point x="0.1" y="0.9" />
+                                <point x="0" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="BlueTank" sid="285064519495530">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="speed" sid="521303464743996" type="number" />
+                    <instance-variable name="lifes" sid="655677239033443" type="number" />
+                    <instance-variable name="ammo" sid="344491135246462" type="number" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="BoundToLayout" sid="270672503942500">
+                        <behavior id="bound" />
+                    </behavior-type>
+                    <behavior-type name="Solid" sid="763492433567609">
+                        <behavior id="solid" />
+                    </behavior-type>
+                    <behavior-type name="8Direction" sid="509662342974577">
+                        <behavior id="EightDir" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="504390391754184" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.0266667" y="0.02" />
+                                <point x="0.973333" y="0.02" />
+                                <point x="0.986667" y="0.835" />
+                                <point x="0.593333" y="0.79" />
+                                <point x="0.6" y="1" />
+                                <point x="0.426666" y="0.995" />
+                                <point x="0.413333" y="0.79" />
+                                <point x="0" y="0.8275" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="GreenTank" sid="987965318212373">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="speed" sid="501078489873911" type="number" />
+                    <instance-variable name="lifes" sid="254668525565232" type="number" />
+                    <instance-variable name="ammo" sid="753793398683984" type="number" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="BoundToLayout" sid="109634801965194">
+                        <behavior id="bound" />
+                    </behavior-type>
+                    <behavior-type name="Solid" sid="418315566874638">
+                        <behavior id="solid" />
+                    </behavior-type>
+                    <behavior-type name="8Direction" sid="638438378655980">
+                        <behavior id="EightDir" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="826394032802261" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="TankFront" x="0.5" y="1" />
+                            <collision-poly>
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                                <point x="1" y="0.84" />
+                                <point x="0.613333" y="0.77" />
+                                <point x="0.58" y="1" />
+                                <point x="0.433333" y="1" />
+                                <point x="0.416667" y="0.78" />
+                                <point x="0" y="0.83" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="GreenBullet" sid="457640041028066">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Bullet" sid="217156327850958">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                    <behavior-type name="DestroyOutsideLayout" sid="692467703927678">
+                        <behavior id="destroy" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="814395035114469" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Wall" sid="433655165489525">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Solid" sid="783500803527967">
+                        <behavior id="solid" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="473682405392440" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="GameAdditionals">
+            <object-type name="BlueWinsText" sid="225890263422026">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="Boom" sid="433761046316895">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="17" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="861643336336640" speed="5">
+                        <frame duration="0.5" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="0.5" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="0.5" hotspotX="0.510417" hotspotY="0.5" />
+                        <frame duration="0.5" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="0.5" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="0.51" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="0.51" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="0.51" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="0.51" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="0.51" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="0.51" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="0.51" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="0.51" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="0.51" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="0.51" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="0.51" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="0.51" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="GameBackground" sid="532770807162420">
+                <plugin id="TiledBg" />
+                <texture />
+            </object-type>
+            <object-type name="GreenWinsText" sid="512630268836820">
+                <plugin id="Text" />
+            </object-type>
+        </object-folder>
         <object-type name="Keyboard" sid="983110606179805">
             <plugin id="Keyboard" />
         </object-type>
@@ -111,6 +252,7 @@
     <event-folder>
         <event-sheet>MenuEventSheet.xml</event-sheet>
         <event-sheet>GameEventSheet.xml</event-sheet>
+        <event-sheet>ControlsSheet.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="4" />

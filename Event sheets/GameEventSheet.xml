@@ -3,124 +3,115 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>GameEventSheet</name>
     <events>
-        <event-block sid="416013205497906">
+        <include>ControlsSheet</include>
+        <event-block sid="273435238957203">
             <conditions>
-                <condition id="2" name="Key is down" sid="933562091438052" type="Keyboard">
-                    <param id="0" name="Key">65</param>
+                <condition id="0" name="On collision with another object" sid="110947614572762" type="BlueBullet">
+                    <param id="0" name="Object">Wall</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="-1" name="Set X" sid="658484295031709" type="BlueTank">
-                    <param id="0" name="X">BlueTank.X -BlueTank.speed</param>
+                <action id="0" name="Spawn another object" sid="992186954691586" type="Wall">
+                    <param id="0" name="Object">Boom</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
                 </action>
-                <action id="-8" name="Set angle" sid="878973246636415" type="BlueTank">
-                    <param id="0" name="Angle">90</param>
+                <action id="-9" name="Destroy" sid="624380764406804" type="BlueBullet" />
+                <action id="-9" name="Destroy" sid="779879629024167" type="Wall" />
+            </actions>
+        </event-block>
+        <event-block sid="391444893056853">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="942432321435533" type="GreenBullet">
+                    <param id="0" name="Object">Wall</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="910255215938551" type="Wall">
+                    <param id="0" name="Object">Boom</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="553713214427496" type="GreenBullet" />
+                <action id="-9" name="Destroy" sid="617212670332327" type="Wall" />
+            </actions>
+        </event-block>
+        <event-block sid="856460746233934">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="988416626739281" type="BlueBullet">
+                    <param id="0" name="Object">GreenTank</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="654784465112403" type="BlueBullet" />
+                <action id="-10" name="Set value" sid="546965693051529" type="GreenTank">
+                    <param id="0" name="Instance variable">lifes</param>
+                    <param id="1" name="Value">Self.lifes - 1</param>
                 </action>
             </actions>
         </event-block>
-        <event-block sid="853748309793972">
+        <event-block sid="954803770724918">
             <conditions>
-                <condition id="2" name="Key is down" sid="128020038317019" type="Keyboard">
-                    <param id="0" name="Key">68</param>
+                <condition id="0" name="On collision with another object" sid="629765790469059" type="GreenBullet">
+                    <param id="0" name="Object">BlueTank</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="-1" name="Set X" sid="397020146570332" type="BlueTank">
-                    <param id="0" name="X">BlueTank.X + BlueTank.speed</param>
-                </action>
-                <action id="-8" name="Set angle" sid="896491489845920" type="BlueTank">
-                    <param id="0" name="Angle">270</param>
+                <action id="-9" name="Destroy" sid="618602370213421" type="GreenBullet" />
+                <action id="-10" name="Set value" sid="172052127245567" type="BlueTank">
+                    <param id="0" name="Instance variable">lifes</param>
+                    <param id="1" name="Value">self.lifes - 1</param>
                 </action>
             </actions>
         </event-block>
-        <event-block sid="610098333430727">
+        <event-block sid="590250495625525">
             <conditions>
-                <condition id="2" name="Key is down" sid="323164596096713" type="Keyboard">
-                    <param id="0" name="Key">83</param>
+                <condition id="-8" name="Compare two values" sid="349173893080722" type="System">
+                    <param id="0" name="First value">BlueTank.lifes</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">0</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="-2" name="Set Y" sid="475141843170256" type="BlueTank">
-                    <param id="0" name="Y">BlueTank.Y + BlueTank.speed</param>
+                <action id="0" name="Spawn another object" sid="155585729042995" type="BlueTank">
+                    <param id="0" name="Object">Boom</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
                 </action>
-                <action id="-8" name="Set angle" sid="588137156864638" type="BlueTank">
-                    <param id="0" name="Angle">0</param>
+                <action id="-9" name="Destroy" sid="770315801140151" type="BlueTank" />
+                <action id="-3" name="Set position" sid="801795603744679" type="GreenWinsText">
+                    <param id="0" name="X">LayoutWidth/2 - self.Width / 2</param>
+                    <param id="1" name="Y">LayoutHeight/2 - self.Height - 2</param>
                 </action>
+                <action id="-16" name="Wait" sid="769294785931633" type="System">
+                    <param id="0" name="Seconds">2.0</param>
+                </action>
+                <action id="-26" name="Restart layout" sid="897893044775349" type="System" />
             </actions>
         </event-block>
-        <event-block sid="415110743980840">
+        <event-block sid="421182295111277">
             <conditions>
-                <condition id="2" name="Key is down" sid="414355218378948" type="Keyboard">
-                    <param id="0" name="Key">87</param>
+                <condition id="-8" name="Compare two values" sid="262655921944590" type="System">
+                    <param id="0" name="First value">GreenTank.lifes</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">0</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="-2" name="Set Y" sid="831058350759272" type="BlueTank">
-                    <param id="0" name="Y">BlueTank.Y - BlueTank.speed</param>
+                <action id="0" name="Spawn another object" sid="650366015764522" type="GreenTank">
+                    <param id="0" name="Object">Boom</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
                 </action>
-                <action id="-8" name="Set angle" sid="221140779112365" type="BlueTank">
-                    <param id="0" name="Angle">180</param>
+                <action id="-9" name="Destroy" sid="192896875244984" type="GreenTank" />
+                <action id="-3" name="Set position" sid="288430222044566" type="BlueWinsText">
+                    <param id="0" name="X">LayoutWidth/2 - self.Width / 2</param>
+                    <param id="1" name="Y">LayoutHeight/2 - self.Height - 2</param>
                 </action>
-            </actions>
-        </event-block>
-        <event-block sid="908231067278571">
-            <conditions>
-                <condition id="2" name="Key is down" sid="936777743548919" type="Keyboard">
-                    <param id="0" name="Key">37</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-1" name="Set X" sid="472430277083250" type="GreenTank">
-                    <param id="0" name="X">GreenTank.X - GreenTank.speed</param>
+                <action id="-16" name="Wait" sid="281556010265683" type="System">
+                    <param id="0" name="Seconds">2.0</param>
                 </action>
-                <action id="-8" name="Set angle" sid="468171704645742" type="GreenTank">
-                    <param id="0" name="Angle">90</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="609186071137979">
-            <conditions>
-                <condition id="2" name="Key is down" sid="907230735513072" type="Keyboard">
-                    <param id="0" name="Key">39</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-1" name="Set X" sid="149276146494394" type="GreenTank">
-                    <param id="0" name="X">GreenTank.X + GreenTank.speed</param>
-                </action>
-                <action id="-8" name="Set angle" sid="178020231534147" type="GreenTank">
-                    <param id="0" name="Angle">270</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="411114883748481">
-            <conditions>
-                <condition id="2" name="Key is down" sid="170592838148102" type="Keyboard">
-                    <param id="0" name="Key">40</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-2" name="Set Y" sid="476429583656150" type="GreenTank">
-                    <param id="0" name="Y">GreenTank.Y + GreenTank.speed</param>
-                </action>
-                <action id="-8" name="Set angle" sid="959403125673948" type="GreenTank">
-                    <param id="0" name="Angle">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="164748890480443">
-            <conditions>
-                <condition id="2" name="Key is down" sid="749332342578620" type="Keyboard">
-                    <param id="0" name="Key">38</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-2" name="Set Y" sid="341778046377190" type="GreenTank">
-                    <param id="0" name="Y">GreenTank.Y - GreenTank.speed</param>
-                </action>
-                <action id="-8" name="Set angle" sid="245062892636386" type="GreenTank">
-                    <param id="0" name="Angle">180</param>
-                </action>
+                <action id="-26" name="Restart layout" sid="811029577794414" type="System" />
             </actions>
         </event-block>
     </events>
