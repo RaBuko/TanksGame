@@ -10,10 +10,10 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout order="0">Menu</layout>
-        <layout order="3">Game</layout>
-        <event-sheet order="1">MenuEventSheet</event-sheet>
-        <event-sheet active="1" order="2">GameEventSheet</event-sheet>
+        <layout order="1">Menu</layout>
+        <layout active="1" order="5">Game</layout>
+        <event-sheet order="2">MenuEventSheet</event-sheet>
+        <event-sheet order="3">GameEventSheet</event-sheet>
         <event-sheet order="4">ControlsSheet</event-sheet>
     </open-tabs>
     <properties>
@@ -26,14 +26,14 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     <folders-expanded>
         <folder expanded="1" path="object-folder/" />
         <folder expanded="0" path="object-folder/Menu/" />
-        <folder expanded="0" path="object-folder/GameObjects/" />
-        <folder expanded="1" path="object-folder/GameAdditionals/" />
+        <folder expanded="1" path="object-folder/GameObjects/" />
+        <folder expanded="0" path="object-folder/GameAdditionals/" />
         <folder expanded="1" path="layout-folder/" />
         <folder expanded="1" path="event-folder/" />
-        <folder expanded="1" path="file-folder/" />
+        <folder expanded="0" path="file-folder/" />
         <folder expanded="1" path="sound-folder/" />
         <folder expanded="1" path="music-folder/" />
-        <folder expanded="0" path="file-folder/Icons/" />
+        <folder expanded="1" path="file-folder/Icons/" />
         <folder expanded="1" path="animation-folder/BlueBullet/" />
         <folder expanded="1" path="animation-folder/BlueTank/" />
         <folder expanded="1" path="animation-folder/GreenTank/" />
